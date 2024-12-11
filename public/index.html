@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 1px;
+        }
+
+        .postcard {
+            width: 400px;
+            height: 550px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+            background-image: url('../public/img/banner1.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .postcard:hover {
+            transform: scale(1.05);
+        }
+
+        .postcard h2{
+            margin: 55px 0;
+            text-align: center;
+        }
+
+        .edit-form {
+            position: absolute;
+            top: 0;
+            right: -420px;
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+        }
+
+        .container:hover .edit-form {
+            right: 120;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn-send {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-send:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Postcard -->
+    <div class="postcard">
+        <h2 id="postcard-name">Hello, Friend!</h2>
+        <p id="postcard-message">This is a special message just for you.</p>
+        <p class="email" id="postcard-email">Email: example@example.com</p>
+    </div>
+
+    <!-- Editable Form -->
+    <div class="edit-form">
+        <h3>Edit Postcard</h3>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="name">Recipient's Name</label>
+                <input type="text" id="name" name="name" placeholder="Recipient's Name" />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="regards">Your Regards</label>
+                <input type="text" id="regards" name="regards" placeholder="Enter your regards" />
+            </div>
+            <div class="form-group">
+                <label for="senderName">Your Name</label>
+                <input type="text" id="senderName" name="senderName" placeholder="Your Name" />
+            </div>
+            <div class="form-group">
+                <label for="email">Send to (Email)</label>
+                <input type="email" id="email" name="email" placeholder="Recipient's email" />
+            </div>
+            <button type="button" class="btn-send" onclick="sendPostcard()">Send Postcard</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Initial Values
+    const postcardName = document.getElementById('postcard-name');
+    const postcardMessage = document.getElementById('postcard-message');
+    const postcardEmail = document.getElementById('postcard-email');
+    const postcardRegards = document.getElementById('postcard-regards');
+
+    // Form fields
+    const nameField = document.getElementById('name');
+    const messageField = document.getElementById('message');
+    const regardsField = document.getElementById('regards');
+    const senderNameField = document.getElementById('senderName');
+    const emailField = document.getElementById('email');
+
+    // Update Postcard preview when form changes
+    nameField.addEventListener('input', () => {
+        postcardName.textContent = nameField.value ? nameField.value : 'Hello, Friend!';
+    });
+
+    messageField.addEventListener('input', () => {
+        postcardMessage.textContent = messageField.value ? messageField.value : 'This is a special message just for you.';
+    });
+
+    regardsField.addEventListener('input', () => {
+        postcardRegards.textContent = 'Regards, ' + regardsField.value ? regardsField.value : '';
+    });
+
+    emailField.addEventListener('input', () => {
+        postcardEmail.textContent = 'Email: ' + emailField.value;
+    });
+
+    // Send Postcard function to send data to the backend
+    function sendPostcard() {
+        const name = nameField.value;
+        const message = messageField.value;
+        const email = emailField.value;
+        const regards = regardsField.value;
+        const senderName = senderNameField.value;
+
+        if (name && message && email && regards && senderName) {
+            const data = {
+                name: name,
+                message: message,
+                email: email,
+                regards: regards,
+                senderName: senderName
+            };
+
+            // Send data to the backend via POST request
+            fetch('http://localhost:3000/send-postcard', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Postcard sent successfully!');
+                // Clear form after sending
+                nameField.value = '';
+                messageField.value = '';
+                regardsField.value = '';
+                senderNameField.value = '';
+                emailField.value = '';
+                postcardName.textContent = 'Hello, Friend!';
+                postcardMessage.textContent = 'This is a special message just for you.';
+                postcardEmail.textContent = 'Email: example@example.com';
+            })
+            .catch(error => {
+                alert('Error sending postcard. Please try again.');
+                console.error('Error:', error);
+            });
+        } else {
+            alert('Please fill in all fields before sending the postcard.');
+        }
+    }
+</script>
+
+</body>
+</html>
