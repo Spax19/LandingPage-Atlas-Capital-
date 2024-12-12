@@ -1,331 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Year Celebration - African Theme</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./public/styles/styles.css">
   <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-      }
-      
-      /* Header / Hero Section */
-      .hero {
-        background: linear-gradient(135deg, #F8AFA6, #FEBA91);
-        color: white;
-        padding: 100px 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .hero-content {
-        z-index: 10;
-      }
-      
-      .hero-title {
-        font-size: 3rem;
-        margin-bottom: 20px;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-      }
-      
-      .cta-btn {
-        background-color: #F4B400;
-        color: #fff;
-        font-size: 1.2rem;
-        padding: 15px 30px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-      
-      .cta-btn:hover {
-        background-color: #F57F17;
-      }
-      
-      /* Main Content Section */
-      .celebrate {
-        background-color: #FFF9E6;
-        text-align: center;
-        padding: 50px 20px;
-      }
-      
-      .celebrate-content {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      
-      .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #6A1B9A;
-      }
-      
-      .section-text {
-        font-size: 1.2rem;
-        color: #555;
-        margin-bottom: 40px;
-      }
-      
-      .wildlife {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 40px;
-      }
-      
-      .wildlife-img {
-        width: 100px;
-        height: auto;
-        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-      }
-      
-      /* Call to Action Section */
-      .cta {
-        background-color: #4CAF50;
-        color: white;
-        text-align: center;
-        padding: 50px 20px;
-      }
-      
-      .cta-content h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-      
-      .cta-content p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-      }
-      
-      .cta-btn {
-        background-color: #FFD600;
-        color: #333;
-        font-size: 1.2rem;
-        padding: 15px 30px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-      
-      .cta-btn:hover {
-        background-color: #FFB300;
-      }
-      
-      /* Modal / Pop-up Card */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-      }
-      
-      .modal-content {
-        background-color: #fff;
-        margin: 15% auto;
-        padding: 30px;
-        width: 50%;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      
-      .modal h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #6A1B9A;
-      }
-      
-      .modal p {
-        font-size: 1.2rem;
-        color: #333;
-        margin-bottom: 30px;
-      }
-      
-      .close-btn {
-        font-size: 2rem;
-        color: #333;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
-      
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    /* Header / Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #773b03, #492a02);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .hero-content {
+      z-index: 10;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background-color: #fff;
+      color: #000;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #F57F17;
+    }
+
+    /* Main Content Section */
+    .celebrate {
+      background-color: #FFF9E6;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .celebrate-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .section-text {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .wildlife {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+
+    .wildlife-img {
+      width: 100px;
+      height: auto;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Call to Action Section */
+    .cta {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .cta-btn {
+      background-color: #fff;
+      color: #000;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #382700;
+    }
+
+    /* Modal / Pop-up Card */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10px auto;
+      padding: 30px;
+      width: 400px;
+      height: 580px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-image: url('./public/img/banner1.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .modal h2 {
+      font-size: 2rem;
+      margin-top: 80px;
+      color: #000;
+    }
+
+    .modal p {
+      font-size: 1.2rem;
+      color: #000;
+      margin-top: 180px;
+    }
+
+    .close-btn {
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-family: "Montserrat", sans-serif;
+      text-shadow: 1px 1px 1px #522600,
+        1px 2px 1px #522600,
+        1px 3px 1px #522600,
+        1px 4px 1px #522600,
+        1px 5px 1px #522600,
+        1px 6px 1px #522600,
+        1px 10px 5px rgba(16, 16, 16, 0.5),
+        1px 15px 10px rgba(16, 16, 16, 0.4),
+        1px 20px 30px rgba(16, 16, 16, 0.3),
+        1px 25px 50px rgba(16, 16, 16, 0.2);
+      font-weight: bold;
+      color: #fff;}
+
       .close-btn:hover {
-        color: #F57F17;
+        color: #7a7774;
       }
-      
+
       .cta-btn {
-        background-color: #F4B400;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
         font-size: 1.2rem;
+        font-weight: bold;
         padding: 15px 30px;
         border-radius: 5px;
         text-decoration: none;
         transition: background-color 0.3s ease;
       }
-      
+
       .cta-btn:hover {
-        background-color: #F57F17;
+        background-color: #522600;
+        color: #fff;
       }
-      
+
       /* Footer Section */
       footer {
-        background-color: #333;
+        background: linear-gradient(135deg, #773b03, #492a02);
         color: white;
         text-align: center;
         padding: 20px 0;
       }
-      
+
       footer p {
         font-size: 1rem;
       }
-      
-      .footer-socials {
-        margin-top: 10px;
-      }
-      
-      .social-icon {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-        font-size: 1.5rem;
-      }
-      
-      .social-icon:hover {
-        color: #F57F17;
-      }
-      
+
+
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .hero-title {
           font-size: 2rem;
         }
-      
+
         .hero-subtitle {
           font-size: 1rem;
         }
-      
+
         .section-title {
           font-size: 2rem;
         }
-      
+
         .cta-content h2 {
           font-size: 1.5rem;
         }
-      
+
         .cta-btn {
           padding: 12px 25px;
         }
-      
+
         .wildlife {
           flex-direction: column;
         }
-      
+
         .wildlife-img {
           width: 80px;
           margin-bottom: 20px;
         }
       }
 
-      
-      .postcard {
-        width: 400px;
-        height: 550px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+      nav .nav-bar {
         position: relative;
-        transition: transform 0.3s ease;
-        background-image: url('../public/img/banner1.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+        height: 100%;
+        max-width: 1000px;
+        width: 100%;
+        background-color: var(--nav-color);
+        margin: 0 auto;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    .postcard:hover {
-        transform: scale(1.05);
-    }
+      nav .nav-bar .sidebarOpen {
+        color: var(--text-color);
+        font-size: 25px;
+        padding: 5px;
+        cursor: pointer;
+        display: none;
+      }
 
-    .postcard h2{
-        margin: 55px 0;
-        text-align: center;
-    }
-      
+      nav .nav-bar .logo a {
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .menu .logo-toggle {
+        display: none;
+      }
+
+      .nav-bar .nav-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-bar .nav-links li {
+        margin: 0 5px;
+        list-style: none;
+      }
+
+      .nav-links li a {
+        position: relative;
+        font-size: 17px;
+        font-weight: 400;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 10px;
+      }
+
+      .nav-links li a::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background-color: var(--text-color);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links li:hover a::before {
+        opacity: 1;
+      }
+
+
+
+      @media (max-width: 790px) {
+        nav .nav-bar .sidebarOpen {
+          display: block;
+        }
+
+        .menu {
+          position: fixed;
+          height: 100%;
+          width: 320px;
+          left: -100%;
+          top: 0;
+          padding: 20px;
+          background-color: var(--side-nav);
+          z-index: 100;
+          transition: all 0.4s ease;
+        }
+
+        nav.active .menu {
+          left: -0%;
+        }
+
+        nav.active .nav-bar .navLogo a {
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        .menu .logo-toggle {
+          display: block;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo-toggle .siderbarClose {
+          color: var(--text-color);
+          font-size: 24px;
+          cursor: pointer;
+        }
+
+        .nav-bar .nav-links {
+          flex-direction: column;
+          padding-top: 30px;
+        }
+
+        .nav-links li a {
+          display: block;
+          margin-top: 20px;
+        }
+      }
   </style>
 </head>
+
 <body>
 
   <!-- Header / Hero Section -->
   <header class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Happy New Year 2024!</h1>
-      <p class="hero-subtitle">Celebrate the African spirit of unity and joy.</p>
-      <a href="#celebrate" class="cta-btn">Join the Celebration</a>
-    </div>
+    <nav>
+      <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+        <span class="logo navLogo"><a href="#">Atlas</a></span>
+        <div class="menu">
+          <div class="logo-toggle">
+            <span class="logo"><a href="#">Atlas</a></span>
+            <i class='bx bx-x siderbarClose'></i>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <!-- Main Content Section -->
-  <section id="celebrate" class="celebrate">
-    <div class="celebrate-content">
-      <h2 class="section-title">Celebrate with Us</h2>
-      <p class="section-text">As we step into 2024, let's embrace the warmth, peace, and joy of African traditions.</p>
-      <div class="wildlife">
-        <img src="elephant.svg" alt="Elephant" class="wildlife-img">
-        <img src="lion.svg" alt="Lion" class="wildlife-img">
-        <img src="giraffe.svg" alt="Giraffe" class="wildlife-img">
+  <main>
+    <section>
+      <div>
+        <h1>Celebrate the African spirit of unity and joy.</h1>
+        <hr />
+        <a href="javascript:void(0);" class="cta-btn" id="openModalBtn">Join The Celebration</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Start Your Adventure Today!</h2>
-      <p>Embrace a New Year full of possibilities with Africa's timeless spirit.</p>
-      <a href="javascript:void(0);" class="cta-btn" id="openModalBtn">Explore Now</a>
-    </div>
-  </section>
-
+    </section>
+    <section>
+      <div>
+        <p style="color: #fff; font-weight: bold;">From ATLAS</p>
+        <p>&#9924;</p>
+        <br>
+        <p id='copyright'>&copy;2023 Atlas Capital</p>
+      </div>
+    </section>
+  </main>
+  <div id="background">
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+  </div>
   <!-- Modal / Pop-up Card -->
   <div id="popupCard" class="modal">
-  
-        <div class="postcard">
-            <h2 id="postcard-name">Hello, Friend!</h2>
-            <p id="postcard-message">This is a special message just for you.</p>
-            <p class="email" id="postcard-email">Email: example@example.com</p>
-        </div>
+    <div class="close-btn">x</div>
+    <div class="modal-content">
+      <!-- <h2 id="postcard-name">Hello, Friend!</h2> -->
+      <p id="postcard-message">Желаю вам сезона радости, сезона благословений, сезона благодарности за все радостные
+        вести и хорошее настроение.</p>
+    </div>
 
   </div>
 
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 African New Year Celebrations. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="#" class="social-icon">FB</a>
-      <a href="#" class="social-icon">IG</a>
-      <a href="#" class="social-icon">TW</a>
-    </div>
   </footer>
 
   <script src="scripts.js"></script>
 
 </body>
+
 </html>
